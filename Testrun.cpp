@@ -1,4 +1,4 @@
-// Cmd++ 1.03 Delta Vee! Example source code  ///////////////////////////////////
+// Cmd-- 1.10 Delta Vee! Example source code  ///////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
@@ -14,8 +14,6 @@
 #include "GenericMenu.h"
 #include "TCmdMenu.h"
 #include "ProgData.h"
-#include "Functionalize!.h"
-#include "MathFx.h"
 #include <stdio.h>   
 #define NEWLINE '\n'
 #define TAB '\t'
@@ -44,11 +42,11 @@ void Runprog()
 {	Output_program_title(Program_Title);
 	InitFxObjects();
 	CGenericMenu * main = new TCmdMenu ("MAIN", "Main-Menu");
-	CGenericMenu * graph = new TCmdMenu ( "MAIN", "CALCULATOR", "Delta-Vee Calculation Menu");
-	(graph)->MFxPointers.emplace_back(Dv);
-	(graph)->MFxPointers.emplace_back(Mp);
-	(graph)->MFxPointers.emplace_back(Mpay);
-	(graph)->MFxPointers.emplace_back(Vexh);
+	CGenericMenu * graph = new TCmdMenu ("MAIN", "CALCULATOR", "Delta-Vee Calculation Menu");
+	(graph)->Embed_function(Dv);
+	(graph)->Embed_function(Mp);
+	(graph)->Embed_function(Mpay);
+	(graph)->Embed_function(Vexh);
 	(main)->menu();												
 }
 
@@ -99,7 +97,7 @@ void DvFunction::Fx ()									// Apologies for the horrific... everything. This
 	Md1 = (singlestage.Md+singlestage.Mrcs+singlestage.Mcons+(singlestage.Crew*90));
 	singlestage.DeeVee = singlestage.Vexh*(log((Mp1+Md1)/(Md1)));
 	cout << "Delta-Vee: " << TAB << singlestage.DeeVee << "m/s" << NEWLINE << endl;
-	Cmd_plusplus::Send_WM_Box("Delta Vee!", singlestage.DeeVee);
+	Cmd_dashdash::Send_WM_Box("Delta Vee!", singlestage.DeeVee);
 }
 
 void MpFunction::Fx ()
@@ -118,7 +116,7 @@ void MpFunction::Fx ()
 	Md1 = (singlestage.Md+singlestage.Mrcs+singlestage.Mcons+(singlestage.Crew*90));
 	singlestage.Mp = ((exp(singlestage.DeeVee/singlestage.Vexh))*(Md1))-(Md1);
 	cout << "Propellant Required: " << TAB << singlestage.Mp << TAB << "kg" << NEWLINE << NEWLINE;
-	Cmd_plusplus::Send_WM_Box("Propellant Required", singlestage.Mp);
+	Cmd_dashdash::Send_WM_Box("Propellant Required", singlestage.Mp);
 }
 
 void VexhFunction::Fx ()
@@ -139,7 +137,7 @@ void VexhFunction::Fx ()
 	Md1 = (singlestage.Md+singlestage.Mrcs+singlestage.Mcons+(singlestage.Crew*90));
 	singlestage.Vexh = (singlestage.DeeVee/log((Mp1+Md1)/(Md1)));
 	cout << "Exhaust Velocity Required: " << TAB << singlestage.Vexh << TAB << "m/s" << NEWLINE << NEWLINE;
-	Cmd_plusplus::Send_WM_Box("Exhaust Velocity", singlestage.Vexh);
+	Cmd_dashdash::Send_WM_Box("Exhaust Velocity", singlestage.Vexh);
 }
 
 void MpayFunction::Fx ()
@@ -160,6 +158,6 @@ void MpayFunction::Fx ()
 	singlestage.Crew = GiveameINPUT();
 	singlestage.Mp = ((singlestage.Mp/(exp(singlestage.DeeVee/singlestage.Vexh)-1))-singlestage.Md-singlestage.Mrcs-singlestage.Mcons-(singlestage.Crew*90));
 	cout << "Maximum Payload: " << TAB << singlestage.Mp << TAB << "kg" << NEWLINE << NEWLINE;
-	Cmd_plusplus::Send_WM_Box("Maximum Payload", singlestage.Mp);
+	Cmd_dashdash::Send_WM_Box("Maximum Payload", singlestage.Mp);
 }
 

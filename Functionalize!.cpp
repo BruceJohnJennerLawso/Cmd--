@@ -36,7 +36,7 @@ using namespace std;
 // Cmd_plusplus::Input Functions /////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-bool Cmd_plusplus::Input_bool(string prompt)
+bool Cmd_dashdash::Input_bool(string prompt)
 {	while(true)
 	{	cout << prompt;
 		string data;
@@ -63,7 +63,7 @@ bool Cmd_plusplus::Input_bool(string prompt)
 	}	
 }
 
-std::string Cmd_plusplus::Input_string(string prompt)
+std::string Cmd_dashdash::Input_string(string prompt)
 {	std::string data = "";
 	while(true)
 	{	cout << endl;
@@ -85,28 +85,28 @@ std::string Cmd_plusplus::Input_string(string prompt)
 // Cmd_plusplus::Output Functions ////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-std::string Cmd_plusplus::Print_text(std::string out)
+std::string Cmd_dashdash::Print_text(std::string out)
 {	std::cout << out;
 	return out;
 }
 
-void Cmd_plusplus::Newline()
+void Cmd_dashdash::Newline()
 {	cout << "\n";
 }
 
-void Cmd_plusplus::Newline(int n)
+void Cmd_dashdash::Newline(int n)
 {	for(int cy = 0; cy <= n; ++cy)
-	{	Cmd_plusplus::Newline();
+	{	Cmd_dashdash::Newline();
 	}	// So, like call your overloaded relative function...
 }	// Kinda cool in a way
 
-void Cmd_plusplus::Print_space()
+void Cmd_dashdash::Print_space()
 {	cout << " ";
 }
 
-void Cmd_plusplus::Print_space(unsigned int n)
+void Cmd_dashdash::Print_space(unsigned int n)
 {	for (unsigned int cy = 0; cy <= n; ++cy)
-	{	Cmd_plusplus::Print_space();	
+	{	Cmd_dashdash::Print_space();	
 	}
 }
 
@@ -116,7 +116,7 @@ void Cmd_plusplus::Print_space(unsigned int n)
 // Cmd_plusplus::Data operator functions /////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-int Cmd_plusplus::Round_double_to_int (double in)
+int Cmd_dashdash::Round_double_to_int (double in)
 {	int d;
 	d = in;
 	in = in - d;
@@ -132,7 +132,7 @@ int Cmd_plusplus::Round_double_to_int (double in)
 	}
 }
 
-string Cmd_plusplus::Return_Char3_as_String(char i [3])
+string Cmd_dashdash::Return_Char3_as_String(char i [3])
 {	string output;
 	output = "";
 	output.insert (output.end(), 1, i [2]);
@@ -141,7 +141,7 @@ string Cmd_plusplus::Return_Char3_as_String(char i [3])
 	return output;							
 }
 
-bool Cmd_plusplus::Compare_string(string i, string comp)
+bool Cmd_dashdash::Compare_string(string i, string comp)
 {	transform (i.begin (), i.end (), i.begin (), toupper);	
 	if (i == comp)
 	{	return true;	
@@ -157,7 +157,7 @@ bool Cmd_plusplus::Compare_string(string i, string comp)
 // Cmd_plusplus::Program flow control functions //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////
 
-int Cmd_plusplus::Convert_input_to_integer(std::string i, std::vector<std::string> icomps)
+int Cmd_dashdash::Convert_input_to_integer(std::string i, std::vector<std::string> icomps)
 {	std::vector<std::string>::iterator itString;
 	unsigned int n = 0;
 	for(itString = icomps.begin(); itString != icomps.end(); ++itString)
@@ -208,7 +208,7 @@ int Cmd_plusplus::Convert_input_to_integer(std::string i, std::vector<std::strin
     #define GetCurrentDir getcwd
 #endif
 
-std::string Cmd_plusplus::Get_directory()
+std::string Cmd_dashdash::Get_directory()
 {	char cCurrentPath[FILENAME_MAX];
 	std::string Directory;
 	if (!GetCurrentDir(cCurrentPath, sizeof(cCurrentPath)))
@@ -220,7 +220,7 @@ std::string Cmd_plusplus::Get_directory()
 	return Directory;
 }
 
-std::string Cmd_plusplus::Get_date(const char * format)
+std::string Cmd_dashdash::Get_date(const char * format)
 {	time_t rawtime;
 	struct tm * timeinfo;
 	char buffer[80];	
@@ -231,7 +231,7 @@ std::string Cmd_plusplus::Get_date(const char * format)
 	return number;	// Need to convert string to integer... yeah... This was finished sometime... Apparently...
 }
 
-unsigned int Cmd_plusplus::GetDTI ()
+unsigned int Cmd_dashdash::GetDTI ()
 {	time_t rawtime;
 	struct tm * timeinfo;
 	char buffer[80];	
@@ -243,15 +243,15 @@ unsigned int Cmd_plusplus::GetDTI ()
 	return DTI;	// Need to convert string to integer... yeah... This was finished sometime... Apparently...
 }
 
-void Cmd_plusplus::Log_exception(std::string e)
+void Cmd_dashdash::Log_exception(std::string e)
 {	std::ofstream errorfile("error.txt");
 	if (errorfile.is_open())
-	{	errorfile << Cmd_plusplus::GetDTI() << "__" << e << "Endlog\n";
+	{	errorfile << Cmd_dashdash::GetDTI() << "__" << e << "Endlog\n";
 		errorfile.close();
 	}
 }
 
-bool Cmd_plusplus::Check_file_exists(std::string file_path)
+bool Cmd_dashdash::Check_file_exists(std::string file_path)
 {	bool Check_return = false;
 	ifstream file (file_path);
 	if(file.is_open())
@@ -260,14 +260,14 @@ bool Cmd_plusplus::Check_file_exists(std::string file_path)
 	return Check_return;
 }
 
-bool Cmd_plusplus::Create_text_file(std::string directory, std::string file_path)
+bool Cmd_dashdash::Create_text_file(std::string directory, std::string file_path)
 {	switch(Check_file_exists(directory.append(file_path)))	// Please note, your input has to be complete, including the .txt file extension
 	{	case true:
 		return false;
 		case false:
 		ofstream file (directory);
 		if (file.is_open())
-		{	file << "//Cmd_plusplus generated file\n" << "//Created on " << Cmd_plusplus::GetDTI(); 
+		{	file << "//Cmd_plusplus generated file\n" << "//Created on " << Cmd_dashdash::GetDTI(); 
 		}
 		file.close();
 		return true;
@@ -283,10 +283,10 @@ bool Cmd_plusplus::Create_text_file(std::string directory, std::string file_path
 
 #ifdef _WIN32
 #include <windows.h>
-void Cmd_plusplus::Send_WM_Box (std::string h, std::string m)
+void Cmd_dashdash::Send_WM_Box (std::string h, std::string m)
 {	MessageBox(NULL, m.c_str(), h.c_str(), MB_OK);
 }	//OS Windows Specific function for sending a message box from inside the command line. Unusual, but somewhat interesting I guess
-void Cmd_plusplus::Send_WM_Box(std::string h, long double m)
+void Cmd_dashdash::Send_WM_Box(std::string h, long double m)
 {	string i;
 	i = std::to_string(m);
 	MessageBox(NULL, i.c_str() , h.c_str(), MB_OK);
@@ -300,7 +300,7 @@ void Send_WM_Box(std::string h, long double m)
 }
 #endif
 
-void Cmd_plusplus::ExitCall()
+void Cmd_dashdash::ExitCall()
 {	cout << "Hail The Probe!!!";
 	exit(0);
 } 

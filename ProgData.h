@@ -61,13 +61,13 @@ void Output_program_title(std::string Name)
 	double bracketing = l/2;
 	l = bracketing;
 	std::string Greetings;
-	for (int cy = 0; cy <= l; ++cy)
+	for (unsigned int cy = 0; cy <= l; ++cy)
 	{	Greetings.insert(Greetings.begin(), Stylechar);
 	}
 	Greetings.insert(l, Name);
 	l = Greetings.length();
 	l = 80 - l;
-	for (int cy = 0; cy <= l; ++cy)
+	for (unsigned int cy = 0; cy <= l; ++cy)
 	{	Greetings.insert(Greetings.end(), Stylechar);
 		if (Greetings.length() >= 80)
 		{	break;

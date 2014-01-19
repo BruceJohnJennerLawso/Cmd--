@@ -13,7 +13,9 @@
 #define BEEP '\a'
 #define BACK '\b'
 
-namespace Cmd_plusplus	// Currently contains 19 functions! ////////////////////////
+//	namespace Cmd_dashdash
+
+namespace Cmd_dashdash	// Currently containing 19 functions! //////////////////////
 {	// Input Functions /////////////////////////////////////////////////////////////
 	template <class T> T Input_value(std::string prompt)
 	{	while(true)
@@ -39,13 +41,12 @@ namespace Cmd_plusplus	// Currently contains 19 functions! /////////////////////
 	std::string Print_text(std::string out);
 	template <class T> void Print_text(T out, unsigned int n)
 	{	for (unsigned int cy = 0; cy <= n; ++cy)
-		{	Cmd_plusplus::Print_text<T>(out);
+		{	Cmd_dashdash::Print_text<T>(out);
 		}
 	}
 	template <class T> void Print_line(T out)
 	{	std::cout << out << std::endl;
 	}
-	
 	void Print_space();
 	void Print_space(unsigned int n);
 	// Operator Functions //////////////////////////////////////////////////////////
@@ -65,7 +66,7 @@ namespace Cmd_plusplus	// Currently contains 19 functions! /////////////////////
 	int Convert_input_to_integer(std::string i, std::vector<std::string> icomps);
 	// General Functions ///////////////////////////////////////////////////////////
 	unsigned int GetDTI ();
-	std::string Cmd_plusplus::Get_date(const char * format)
+	std::string Get_date(const char * format);
 	std::string Get_directory();
 	void Log_exception(std::string e);
 	bool Check_file_exists(std::string file_path);
