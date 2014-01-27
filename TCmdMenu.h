@@ -19,6 +19,7 @@ class TCmdMenu :public CGenericMenu
 	void menuhelp();
 	TCmdMenu(std::string menu_id, std::string menu_name);
 	TCmdMenu(std::string above_menu, std::string menu_id, std::string menu_name);
+	void Transform_ID_to_uppercase();
 	int Execute_By_Id(std::string function_link_name);
 	std::vector<std::string> Stringlist;
 	void DirectExit();

@@ -41,8 +41,8 @@ int main()
 void Runprog()
 {	Output_program_title(Program_Title);
 	InitFxObjects();
-	CGenericMenu * main = new TCmdMenu ("MAIN", "Main-Menu");
-	CGenericMenu * graph = new TCmdMenu ("MAIN", "CALCULATOR", "Delta-Vee Calculation Menu");
+	CGenericMenu * main = new TCmdMenu ("Main", "Main-Menu");
+	CGenericMenu * graph = new TCmdMenu ("Main", "Calculator", "Delta-Vee Calculation Menu");
 	(graph)->Embed_function(Dv);
 	(graph)->Embed_function(Mp);
 	(graph)->Embed_function(Mpay);

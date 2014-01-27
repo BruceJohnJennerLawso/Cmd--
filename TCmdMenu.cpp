@@ -40,9 +40,18 @@ TCmdMenu::TCmdMenu(string menu_id, string menu_name)
 TCmdMenu::TCmdMenu(string above_menu, string menu_id, string menu_name)
 {	menuid = menu_id;
 	menuname = menu_name;
-	Transform_ID_to_uppercase();
-	Linkslist.push_back(this);
-	Stringlist.push_back(above_menu);					
+	Stringlist.push_back(above_menu);	
+	Transform_ID_to_uppercase();	
+	Linkslist.push_back(this);			
+}
+
+void TCmdMenu::Transform_ID_to_uppercase()
+{	transform (this->menuid.begin (), this->menuid.end (), this->menuid.begin (), toupper);
+	if(this->Stringlist.size() > 0)
+	{	for (std::vector<std::string>::iterator it = this->Stringlist.begin(); it != this->Stringlist.end(); ++it)
+		{	transform((*it).begin(), (*it).end(), (*it).begin(), toupper);
+		}
+	}
 }
 
 void TCmdMenu::menu()

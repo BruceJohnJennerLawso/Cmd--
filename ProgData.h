@@ -57,10 +57,10 @@ CProgFx * Dv, * Vexh, * Mp, * Mpay;
 
 
 void InitFxObjects()
-{	Dv = new DvFunction("DV");
-	Mp = new MpFunction("MP");
-	Mpay = new MpayFunction("MPAY");
-	Vexh = new VexhFunction("VEXH");
+{	Dv = new DvFunction("dv");
+	Mp = new MpFunction("mp");
+	Mpay = new MpayFunction("mpay");
+	Vexh = new VexhFunction("vexh");
 }
 
 /////////////////////////////////////////////////////////////////////////////

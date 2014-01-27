@@ -19,7 +19,6 @@ class CGenericMenu
 	CGenericMenu(void);
 	virtual void menu();	
 	std::string menuid;
-	void Transform_ID_to_uppercase();
 	std::string menuname;
 	std::vector<CProgFx*> MFxPointers;
 	void Embed_function(CProgFx * ipt);
