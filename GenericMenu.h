@@ -5,23 +5,13 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include "ProgFx.h"
 #define NEWLINE '\n'
 #define TAB '\t'
 #define VTAB '\v'
 #define BEEP '\a'
 #define BACK '\b'
 
-class CProgFx
-{	public:
-	void ID_Uppercase();
-	void Call_Function();
-	virtual void Fx(){std::cout << NEWLINE << std::endl;}
-	std::string FxId;
-};
-
-void CProgFx::ID_Uppercase()
-{	transform (FxId.begin (), FxId.end (), FxId.begin (), toupper);	
-}
 
 class CGenericMenu
 {	public:
@@ -29,6 +19,7 @@ class CGenericMenu
 	CGenericMenu(void);
 	virtual void menu();	
 	std::string menuid;
+	void Transform_ID_to_uppercase();
 	std::string menuname;
 	std::vector<CProgFx*> MFxPointers;
 	void Embed_function(CProgFx * ipt);

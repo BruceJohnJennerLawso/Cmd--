@@ -45,11 +45,6 @@ TCmdMenu::TCmdMenu(string above_menu, string menu_id, string menu_name)
 	Stringlist.push_back(above_menu);					
 }
 
-void TCmdMenu::Transform_ID_to_uppercase()
-{	transform (this->menuid.begin (), this->menuid.end (), this->menuid.begin (), toupper);
-}
-
-
 void TCmdMenu::menu()
 {	int nswitch = 1;			// Default set for the Menu heading display.
 	string i;					// The input string to send to.
