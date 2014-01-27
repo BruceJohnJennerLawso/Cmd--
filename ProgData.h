@@ -19,25 +19,37 @@ void InitFxObjects();
 
 class DvFunction: public CProgFx
 {	public:
-	DvFunction(std::string ina){FxId = ina;}
+	DvFunction(std::string ina)
+	{	FxId = ina;
+		this->ID_Uppercase();
+	}
 	void Fx();
 };
 
 class MpFunction: public CProgFx
 {	public:
-	MpFunction(std::string ina){FxId = ina;}
+	MpFunction(std::string ina)
+	{	FxId = ina;
+		this->ID_Uppercase();
+	}
 	void Fx();
 };
 
 class VexhFunction: public CProgFx
 {	public:
-	VexhFunction(std::string ina){FxId = ina;}
+	VexhFunction(std::string ina)
+	{	FxId = ina;
+		this->ID_Uppercase();
+	}
 	void Fx();
 };
 
 class MpayFunction: public CProgFx
 {	public:
-	MpayFunction(std::string ina){FxId = ina;}
+	MpayFunction(std::string ina)
+	{	FxId = ina;
+		this->ID_Uppercase();
+	}
 	void Fx();
 };
 

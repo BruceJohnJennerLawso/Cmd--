@@ -28,8 +28,9 @@ TCmdMenu::TCmdMenu(void)
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 TCmdMenu::TCmdMenu(string menu_id, string menu_name)
-{	menuid = menu_id;
+{	menuid = menu_id;	
 	menuname = menu_name;
+	Transform_ID_to_uppercase();
 	Linkslist.push_back(this);		
 }
 
@@ -39,8 +40,13 @@ TCmdMenu::TCmdMenu(string menu_id, string menu_name)
 TCmdMenu::TCmdMenu(string above_menu, string menu_id, string menu_name)
 {	menuid = menu_id;
 	menuname = menu_name;
+	Transform_ID_to_uppercase();
 	Linkslist.push_back(this);
 	Stringlist.push_back(above_menu);					
+}
+
+void TCmdMenu::Transform_ID_to_uppercase()
+{	transform (this->menuid.begin (), this->menuid.end (), this->menuid.begin (), toupper);
 }
 
 

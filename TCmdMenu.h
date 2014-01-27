@@ -15,6 +15,7 @@
 class TCmdMenu :public CGenericMenu
 {	public:
 	TCmdMenu(void);
+	void Transform_ID_to_uppercase();
 	void menu();
 	void menuhelp();
 	TCmdMenu(std::string menu_id, std::string menu_name);
